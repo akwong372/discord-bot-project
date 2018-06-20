@@ -25,7 +25,7 @@ class ChatCommand extends commando.Command {
         } else if (roll == 6){
             message.channel.send(`A-am I kawaii?`);
         } else if (roll == 7){
-            message.channel.send(`Please be gentle...`);  
+            message.channel.send(`P-please be gentle...`);  
         } else {
             message.channel.send(`お前はもう死んでいる`);
         }
