@@ -37,25 +37,41 @@ bot.on('message', (message) => {
         if (message.author.id == config.ownerID) {
             message.channel.send(`Hi, master! ♥`);
         } else if (message.author.id !== config.ownerID) {
-            message.channel.send(`Hi, senpai! ♥`);
+            message.channel.send(`Hi, ${message.author.username} senpai! ♥`);
         }
     } else if (/bot-? ?chan,? go away!? ?,? ?(ple?a?se?)?/i.test(message.toString())) {
         if (message.author.id == config.ownerID) {
             message.channel.send(`M-master w-why...?`);
         } else if (message.author.id !== config.ownerID) {
-            message.channel.send(`uguu...`);
+            let rollGoAway;
+            rollGoAway = Math.floor(Math.random() * 2);
+            if (rollGoAway == 0) {
+                message.channel.send(`Uguu...`);
+            } else if (rollGoAway == 1) {
+                message.channel.send(`P-please let me stay...`);
+            }
         }
     } else if (/bot-? ?chan,? you'?re (super)? ?(so)? ?(very)? ?(really)? ?(damn)? ?gross/i.test(message.toString())) {
         message.channel.send(`:(`);
-    } else if (/bot-? ?chan,? what do you think of rem[?]?/i.test(message.toString()) || /bot-? ?chan,? what do you think about rem[?]?/i.test(message.toString())) {
-        let rollRem;
-        rollRem = Math.floor(Math.random() * 3);
-        if (roll == 0) {
-            message.channel.send(`Who's Rem?`);
-        } else if (rollRem == 1) {
-            message.channel.send(`Literal trash ♥`);
-        } else if (rollRem == 2) {
-            message.channel.send(`Blue Ram`);
+    } else if (/bot-? ?chan,? what do you think of rem[?]?/i.test(message.toString()) || /bot-? ?chan,? what do you think about rem[?]?/i.test(message.toString()) || /bot-? ?chan,? who'? ?i?s rem[?]?/i.test(message.toString())) {
+        if (message.author.id == config.wesleyId) {
+            let rollRem1;
+            rollRem1 = Math.floor(Math.random() * 2);
+            if (rollRem1 == 0) {
+                message.channel.send(`Your waifu?`);
+            } else if (rollRem1 == 1) {
+                message.channel.send(`She seems nice... I guess...`);
+            }
+        } else if (message.author.id !== config.wesleyId) {
+            let rollRem2;
+            rollRem2 = Math.floor(Math.random() * 3);
+            if (rollRem2 == 0) {
+                message.channel.send(`Rem? Who's that?`);
+            } else if (rollRem2 == 1) {
+                message.channel.send(`Literal trash ♥`);
+            } else if (rollRem2 == 2) {
+                message.channel.send(`Blue Ram`);
+            }
         }
     } else if (/bot-? ?chan!/i.test(message.toString())) {
         if (message.author.id == config.ownerID) {
@@ -63,15 +79,25 @@ bot.on('message', (message) => {
         } else if (message.author.id !== config.ownerID) {
             message.channel.send(`${message.author.username}!`);
         }
-    } else if (/bot-? ?chan,? who is emilia[?]?/i.test(message.toString()) || /bot-? ?chan,? what do you think of emilia[?]?/i.test(message.toString()) || /bot-? ?chan,? what do you think about rem[?]?/i.test(message.toString())) {
-        let rollEmi;
-        rollEmi = Math.floor(Math.random() * 3);
-        if (rollE == 0) {
-            message.channel.send(`#1 waifu~`);
-        } else if (rollEmi == 1) {
-            message.channel.send(`Better than blue Ram ♥`);
-        } else if (rollEmi == 2) {
-            message.channel.send(`Subaru made the right choice.`);
+    } else if (/bot-? ?chan,? who'? ?i?s emilia[?]?/i.test(message.toString()) || /bot-? ?chan,? what do you think of emilia[?]?/i.test(message.toString()) || /bot-? ?chan,? what do you think about rem[?]?/i.test(message.toString())) {
+        if (message.author.id == config.wesleyId) {
+            let rollEmi1;
+            rollEmi1 = Math.floor(Math.random() * 3);
+            if (roll1 == 0) {
+                message.channel.send(`Umm... Nobody ♥`);
+            } else if (rollEmi1 == 1) {
+                message.channel.send(`Not your waifu?`);
+            }
+        } else if (message.author.id !== config.wesleyId) {
+            let rollEmi2;
+            rollEmi2 = Math.floor(Math.random() * 3);
+            if (rollEmi2 == 0) {
+                message.channel.send(`#1 waifu~`);
+            } else if (rollEmi2 == 1) {
+                message.channel.send(`Better than blue Ram ♥`);
+            } else if (rollEmi2 == 2) {
+                message.channel.send(`Subaru made the right choice.`);
+            }
         }
     } else if (/bot-? ?chan,? (go)? ?die ?(ple?a?se?)?/i.test(message.toString())) {
         let rollDie;

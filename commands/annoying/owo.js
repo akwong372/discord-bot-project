@@ -19,7 +19,7 @@ class ChatCommand extends commando.Command {
         } else if (roll == 3){
             message.channel.send(`*sweats nervously*`); 
         } else if (roll == 4){
-            message.channel.send(`Uguu`);
+            message.channel.send(`Uguu...`);
         } else if (roll == 5){
             message.channel.send(`S-senpai..?`);
         } else if (roll == 6){
